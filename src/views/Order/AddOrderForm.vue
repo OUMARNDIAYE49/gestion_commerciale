@@ -1,10 +1,9 @@
-<!-- src/components/AddOrderForm.vue -->
 <template>
     <div class="container mt-5">
       <div class="d-flex justify-content-between align-items-center mb-3">
         <h1>Add Order</h1>
         <div class="d-flex justify-content-end">
-          <button class="btn btn-secondary me-2" @click="goHome">Back to Home</button>
+          <button class="btn btn-secondary me-2" @click="goHome">Orders List</button>
           <button class="btn btn-primary" @click="submitOrder">Submit Order</button>
         </div>
       </div>
@@ -67,17 +66,17 @@
         <button type="button" class="btn btn-success" @click="addProduct">Add New Detail</button>
       </form>
     </div>
-  </template>
-  
-  <script>
+</template>
+
+<script>
   import { ref } from 'vue';
   import { useRouter } from 'vue-router';
-  
+
   export default {
     name: 'AddOrderForm',
     setup() {
       const router = useRouter();
-      
+
       const order = ref({
         date: '',
         customer: '',
@@ -88,26 +87,25 @@
           { name: 'Product 1', quantity: 1, price: 0 }
         ]
       });
-  
+
       const addProduct = () => {
         order.value.products.push({ name: '', quantity: 1, price: 0 });
       };
-  
+
       const removeProduct = (index) => {
         order.value.products.splice(index, 1);
       };
-  
+
       const submitOrder = () => {
-        // Here you can send the order data to the backend or manage it in your store
         console.log('Order Submitted:', order.value);
         alert('Order has been successfully added!');
-        router.push('/'); // Redirect back to the orders list after submission
+        router.push('/');
       };
-  
+
       const goHome = () => {
-        router.push('/'); // Redirect to the home page
+        router.push('/');
       };
-  
+
       return {
         order,
         addProduct,
@@ -117,9 +115,57 @@
       };
     }
   };
-  </script>
-  
-  <style scoped>
-  /* Add custom styles here */
-  </style>
-  
+</script>
+
+<style scoped>
+.container {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+  border-collapse: separate;
+  border-spacing: 0 15px;
+}
+
+.table th {
+  background-color: #343a40;
+  color: white;
+  font-weight: bold;
+}
+
+.table td {
+  background-color: #ffffff;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+</style>

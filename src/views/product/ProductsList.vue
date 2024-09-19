@@ -1,12 +1,17 @@
 <template>
   <div class="container mt-5">
-    <div>
-      <h1>List of Products</h1>
-      <div class="text-end mb-3">
-        <button class="btn btn-primary" @click="openModal()">Add New Product</button>
-      </div>
-      <table class="table table-striped table-bordered">
-        <thead>
+    <!-- Header section -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h1 class="text-start display-4">List of Products</h1>
+      <button class="btn btn-primary shadow-lg px-4 py-2" @click="openModal()">
+        <i class="bi bi-plus-lg me-2"></i>Add New Product
+      </button>
+    </div>
+
+    <!-- Products table -->
+    <div class="table-responsive">
+      <table class="table table-hover table-bordered shadow-sm">
+        <thead class="table-dark">
           <tr>
             <th scope="col" class="text-start">Product Name</th>
             <th scope="col" class="text-start">Description</th>
@@ -15,7 +20,7 @@
             <th scope="col" class="text-start">Category</th>
             <th scope="col" class="text-start">Barcode</th>
             <th scope="col" class="text-start">Status</th>
-            <th scope="col" class="text-start">Actions</th>
+            <th scope="col" class="text-center">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -29,21 +34,21 @@
           />
         </tbody>
       </table>
-
-      <!-- Modal to view or edit a product -->
-      <ProductModal
-        v-if="isModalOpen"
-        :product="selectedProduct"
-        :mode="modalMode"
-        @close="closeModal"
-        @save="saveProduct"
-      />
     </div>
+
+    <!-- Modal to view or edit a product -->
+    <ProductModal
+      v-if="isModalOpen"
+      :product="selectedProduct"
+      :mode="modalMode"
+      @close="closeModal"
+      @save="saveProduct"
+    />
   </div>
 </template>
 
 <script>
-import { defineComponent, ref, computed } from 'vue';
+import { defineComponent, ref } from 'vue';
 import ProductItem from './ProductItem.vue';
 import ProductModal from './ProductModal.vue';
 
@@ -61,7 +66,7 @@ export default defineComponent({
 
     const selectedProduct = ref(null);
     const isModalOpen = ref(false);
-    const modalMode = ref('edit'); // or 'view' or 'add'
+    const modalMode = ref('edit');
 
     const openModal = (product = null, mode = 'edit') => {
       selectedProduct.value = product ? { ...product } : { name: '', description: '', price: 0, stock: 0, category: '', barcode: '', status: '' };
@@ -104,7 +109,47 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.table th, .table td {
+.container {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+  border-collapse: separate;
+  border-spacing: 0 15px;
+}
+
+.table th {
+  background-color: #343a40;
+  color: white;
+  font-weight: bold;
+}
+
+.table td {
+  background-color: #ffffff;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.table th.text-center, .table td.text-center {
   text-align: center;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn i {
+  font-size: 1.2rem;
 }
 </style>

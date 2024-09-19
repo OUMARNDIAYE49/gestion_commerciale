@@ -54,22 +54,31 @@ ABC Corporation souhaite développer une application Frontend dynamique avec Vue
 ### Gestion des Produits
 
 -- **Ajouter un produit** : Le formulaire permet d'entrer les informations du produit, telles que le nom, le prix et la quantité en stock.
+
 -- **Lister les produits** : Affichage dynamique de la liste des produits avec une fenetre modal pour faciliter la navigation.
+
 -- **Modifier un produit** : Une vue détaillée permet de modifier les informations d'un produit existant.
+
 -- **Supprimer un produit** : Suppression de produit avec une boîte de confirmation pour éviter les suppressions accidentelles.
 
 ### Gestion des Clients
 
 -- **Ajouter un client** : Le formulaire permet d'ajouter un nouveau client en renseignant des informations comme le nom, l'adresse ,l'email et le numéro de téléphone.
+
 -- **Lister les clients** : Affichage d'une liste des clients avec pagination pour une gestion facile.
+
 -- **Modifier un client** : Possibilité de mettre à jour les informations d'un client spécifique via une interface de modification intuitive.
+
 -- **Supprimer un client**: Suppression d'un client après confirmation, avec mise à jour instantanée de la liste.
 
 ### Gestion des Commandes
 
 -- **Ajouter une commande** : Enregistrement des nouvelles commandes avec les produits associés.
+
 -- **Lister les commandes** : Affichage de toutes les commandes avec pagination pour une vue claire des transactions.
+
 -- **Modifier une commande** : Mise à jour des détails d'une commande, y compris la commande.
+
 -- **Supprimer une commande** : Fonction de suppression de commande avec confirmation.
 
 ## Améliorations Futures

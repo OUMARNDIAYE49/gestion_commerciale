@@ -1,32 +1,35 @@
 <template>
   <div class="container mt-5">
-    <div class="d-flex justify-content-between align-items-center mb-3">
-      <h1 class="text-start">List of Customers</h1>
-      <button class="btn btn-primary" @click="openModal()">Add New Customer</button>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h1 class="text-start display-4">List of Customers</h1>
+      <button class="btn btn-primary shadow-lg px-4 py-2" @click="openModal()">
+        <i class="bi bi-plus-lg me-2"></i>Add New Customer
+      </button>
     </div>
-    <table class="table table-striped table-bordered">
-      <thead>
-        <tr>
-          <th scope="col" class="text-start">Name</th>
-          <th scope="col" class="text-start">Address</th>
-          <th scope="col" class="text-start">Email</th>
-          <th scope="col" class="text-start">Phone</th>
-          <th scope="col" class="text-start">Actions</th> 
-        </tr>
-      </thead>
-      <tbody>
-        <CustomerItem
-          v-for="customer in customers"
-          :key="customer.email"
-          :customer="customer"
-          @view-customer="openModal(customer, 'view')"
-          @edit-customer="openModal(customer, 'edit')"
-          @delete-customer="confirmDelete(customer.email)"
-        />
-      </tbody>
-    </table>
 
-    <!-- Modal to display, add, or edit a customer -->
+    <div class="table-responsive">
+      <table class="table table-hover table-bordered shadow-sm">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col" class="text-start">Name</th>
+            <th scope="col" class="text-start">Address</th>
+            <th scope="col" class="text-start">Email</th>
+            <th scope="col" class="text-start">Phone</th>
+            <th scope="col" class="text-center">Actions</th> 
+          </tr>
+        </thead>
+        <tbody>
+          <CustomerItem
+            v-for="customer in customers"
+            :key="customer.email"
+            :customer="customer"
+            @view-customer="openModal(customer, 'view')"
+            @edit-customer="openModal(customer, 'edit')"
+            @delete-customer="confirmDelete(customer.email)"
+          />
+        </tbody>
+      </table>
+    </div>
     <CustomerModal
       v-if="isModalOpen"
       :customer="selectedCustomer"
@@ -38,7 +41,7 @@
 </template>
 
 <script>
-import { defineComponent, ref, reactive, computed } from 'vue';
+import { defineComponent, ref } from 'vue';
 import CustomerItem from './CustomerItem.vue';
 import CustomerModal from './CustomerModal.vue';
 
@@ -52,7 +55,7 @@ export default defineComponent({
       { name: 'John Doe', address: '123 Main St', email: 'johndoe@example.com', phone: '123-456-7890' },
       { name: 'Jane Smith', address: '456 Oak St', email: 'janesmith@example.com', phone: '098-765-4321' },
     ]);
-    
+
     const selectedCustomer = ref(null);
     const isModalOpen = ref(false);
     const modalMode = ref('edit');
@@ -100,13 +103,46 @@ export default defineComponent({
 </script>
 
 <style scoped>
-/* Aligner les colonnes Name, Address, Email et Phone à gauche */
-.table th.text-start, .table td.text-start {
-  text-align: left;
+.container {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.table {
+  border-collapse: separate;
+  border-spacing: 0 15px;
 }
 
-/* Alignement central pour les autres cellules */
-.table th, .table td {
+.table th {
+  background-color: #343a40;
+  color: white;
+  font-weight: bold;
+}
+
+.table td {
+  background-color: #ffffff;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.table th.text-center, .table td.text-center {
   text-align: center;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn i {
+  font-size: 1.2rem;
 }
 </style>

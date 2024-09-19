@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import CustomersList from '../views/customer/CustomersList.vue';  // Composant des clients
-import ProductsList from '../views/product/ProductsList.vue';   // Composant des produits
-import OrdersList from '../views/Order/OrdersList.vue';       // Composant des commandes
-import AddOrderForm from '../views/Order/AddOrderForm.vue';                       // Composant de connexion
-// import CustomersList from '../views/customer/CustomersList.vue';
+import CustomersList from '../views/customer/CustomersList.vue'; 
+import ProductsList from '../views/product/ProductsList.vue';   
+import OrdersList from '../views/Order/OrdersList.vue';      
+import AddOrderForm from '../views/Order/AddOrderForm.vue';                       
+
               
 
 const routes = [
@@ -11,7 +11,7 @@ const routes = [
   { path: '/Products', name: 'Products', component: ProductsList },
   { path: '/Orders', name: 'Orders', component: OrdersList },
   { path: '/add-order', name: 'AddOrderForm', component: AddOrderForm },
-  { path: '/', redirect: '/customers' } // Redirection vers la page clients par défaut
+  { path: '/', redirect: '/Orders' } 
 ];
 
 const router = createRouter({
