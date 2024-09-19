@@ -1,21 +1,21 @@
 <template>
   <div class="container mt-5">
     <div>
-      <h1>Product List</h1>
+      <h1>List of Products</h1>
       <div class="text-end mb-3">
         <button class="btn btn-primary" @click="openModal()">Add New Product</button>
       </div>
       <table class="table table-striped table-bordered">
         <thead>
           <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Description</th>
-            <th scope="col">Price</th>
-            <th scope="col">Stock</th>
-            <th scope="col">Category</th>
-            <th scope="col">Barcode</th>
-            <th scope="col">Status</th>
-            <th scope="col">Actions</th>
+            <th scope="col" class="text-start">Product Name</th>
+            <th scope="col" class="text-start">Description</th>
+            <th scope="col" class="text-start">Price</th>
+            <th scope="col" class="text-start">Stock</th>
+            <th scope="col" class="text-start">Category</th>
+            <th scope="col" class="text-start">Barcode</th>
+            <th scope="col" class="text-start">Status</th>
+            <th scope="col" class="text-start">Actions</th>
           </tr>
         </thead>
         <tbody>

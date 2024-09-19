@@ -1,8 +1,8 @@
 <template>
   <div class="container mt-5">
     <div class="d-flex justify-content-between align-items-center mb-3">
-      <h1 class="text-start">Customer List</h1>
-      <button class="btn btn-primary" @click="openModal()">Add a Customer</button>
+      <h1 class="text-start">List of Customers</h1>
+      <button class="btn btn-primary" @click="openModal()">Add New Customer</button>
     </div>
     <table class="table table-striped table-bordered">
       <thead>
