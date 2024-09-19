@@ -11,7 +11,7 @@ const routes = [
   { path: '/Products', name: 'Products', component: ProductsList },
   { path: '/Orders', name: 'Orders', component: OrdersList },
   { path: '/add-order', name: 'AddOrderForm', component: AddOrderForm },
-  { path: '/', redirect: '/Orders' } 
+  { path: '/', redirect: '/Customers' } 
 ];
 
 const router = createRouter({

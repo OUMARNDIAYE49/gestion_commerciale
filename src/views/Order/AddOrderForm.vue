@@ -103,7 +103,7 @@
       };
 
       const goHome = () => {
-        router.push('/');
+        router.push('/Orders');
       };
 
       return {
