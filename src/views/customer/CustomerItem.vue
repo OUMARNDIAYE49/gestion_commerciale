@@ -32,7 +32,7 @@ export default defineComponent({
     const { customer } = toRefs(props);
 
     const confirmDelete = () => {
-      if (confirm('Êtes-vous sûr de vouloir supprimer ce client ?')) {
+      if (confirm('Are you sure you want to delete this order?')) {
         emit('delete-customer');
       }
     };

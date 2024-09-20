@@ -54,6 +54,8 @@ export default defineComponent({
     const customers = ref([
       { name: 'John Doe', address: '123 Main St', email: 'johndoe@example.com', phone: '123-456-7890' },
       { name: 'Jane Smith', address: '456 Oak St', email: 'janesmith@example.com', phone: '098-765-4321' },
+      { name: 'Emily Davis', address: '101 Pine St', email: 'emilyd@example.com', phone: '555-123-4567' },
+      { name: 'Chris Brown', address: '202 Elm St', email: 'chrisb@example.com', phone: '555-987-6543' }
     ]);
 
     const selectedCustomer = ref(null);
@@ -83,9 +85,9 @@ export default defineComponent({
     };
 
     const confirmDelete = (email) => {
-      if (confirm('Are you sure you want to delete this customer?')) {
+      
         customers.value = customers.value.filter(c => c.email !== email);
-      }
+      
     };
 
     return {
