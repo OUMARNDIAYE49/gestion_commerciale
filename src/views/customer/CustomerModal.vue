@@ -55,7 +55,7 @@ export default defineComponent({
 
     const modalTitle = computed(() => {
       if (mode.value === 'view') return 'View Customer';
-      if (mode.value === 'add') return 'Add Customer';
+      if (mode.value === 'add') return 'Create New Customer';
       return 'Edit Customer';
     });
 

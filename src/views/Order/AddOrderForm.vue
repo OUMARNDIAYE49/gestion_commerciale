@@ -99,7 +99,7 @@
       const submitOrder = () => {
         console.log('Order Submitted:', order.value);
         alert('Order has been successfully added!');
-        router.push('/');
+        router.push('/Orders');
       };
 
       const goHome = () => {

@@ -14,10 +14,9 @@
             </div>
             <div class="form-group mb-3">
               <label for="description" class="form-label">Description</label>
-              <textarea class="form-control" id="description" v-model="product.description" :readonly="isReadOnly" rows="3"></textarea>
+              <textarea class="form-control" id="description" v-model="product.description" :readonly="isReadOnly" rows="2"></textarea>
             </div>
 
-            <!-- Align Price and Stock on the same row -->
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group mb-3">
@@ -33,7 +32,6 @@
               </div>
             </div>
 
-            <!-- Align Barcode and Status on the same row -->
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group mb-3">
@@ -87,7 +85,7 @@ export default defineComponent({
 
     const modalTitle = computed(() => {
       if (mode.value === 'view') return 'View Product';
-      if (mode.value === 'add') return 'Add Product';
+      if (mode.value === 'add') return 'Create New Product';
       return 'Edit Product';
     });
 
@@ -115,11 +113,11 @@ export default defineComponent({
 <style scoped>
 .modal-content {
   width: 100%;
-  max-width: 700px;
+  max-width: 500px; /* Reducing width */
   margin: auto;
   border-radius: 15px;
   border: none;
-  padding: 20px;
+  padding: 15px; /* Reduced padding */
   background-color: #f8f9fa;
 }
 
@@ -146,20 +144,20 @@ export default defineComponent({
 }
 
 .btn-primary {
-  padding: 0.5rem 1.5rem;
+  padding: 0.4rem 1.2rem;
   border-radius: 8px;
 }
 
 .btn-secondary {
-  padding: 0.5rem 1.5rem;
+  padding: 0.4rem 1.2rem;
   border-radius: 8px;
 }
 
 .modal-body {
-  padding: 1.5rem;
+  padding: 1rem; /* Reduced padding */
 }
 
 .modal-footer {
-  padding: 1rem;
+  padding: 0.75rem; /* Reduced padding */
 }
 </style>

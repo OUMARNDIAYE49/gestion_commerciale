@@ -45,10 +45,21 @@ export default defineComponent({
       }
     };
 
+    const emitViewProduct = () => {
+      emit('view-product');
+    };
+
+    const emitEditProduct = () => {
+      emit('edit-product');
+    };
+
+
     return {
       product,
       emitEvent,
-      confirmDelete
+      confirmDelete,
+      emitViewProduct,
+      emitEditProduct
     };
   }
 });

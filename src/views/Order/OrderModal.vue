@@ -12,7 +12,7 @@
               <p><strong>Date:</strong> {{ order.date }}</p>
               <p><strong>Customer:</strong> {{ order.customer }}</p>
               <p><strong>Delivery Address:</strong> {{ order.deliveryAddress }}</p>
-              <p><strong>Tracking Number:</strong> {{ order.trackNumber }}</p>
+              <p><strong>Track Number:</strong> {{ order.trackNumber }}</p>
               <p><strong>Status:</strong> {{ order.status }}</p>
   
               <!-- Liste des produits -->
@@ -41,7 +41,7 @@
                 </div>
                 <div class="row g-2 mt-3">
                   <div class="col">
-                    <label for="trackingNumber" class="form-label">Tracking Number</label>
+                    <label for="trackingNumber" class="form-label">Track Number</label>
                     <input type="text" class="form-control" id="trackingNumber" v-model="order.trackNumber" />
                   </div>
                   <div class="col">

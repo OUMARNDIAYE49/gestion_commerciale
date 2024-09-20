@@ -28,8 +28,9 @@
             v-for="product in products"
             :key="product.id"
             :product="product"
-            @edit-product="openModal(product)"
+            @edit-product="openModal(product, 'edit')"
             @view-product="openModal(product, 'view')"
+
             @delete-product="deleteProduct(product.id)"
           />
         </tbody>
@@ -68,7 +69,7 @@ export default defineComponent({
     const isModalOpen = ref(false);
     const modalMode = ref('edit');
 
-    const openModal = (product = null, mode = 'edit') => {
+    const openModal = (product = null, mode = 'add') => {
       selectedProduct.value = product ? { ...product } : { name: '', description: '', price: 0, stock: 0, category: '', barcode: '', status: '' };
       modalMode.value = mode;
       isModalOpen.value = true;
