@@ -35,7 +35,6 @@
           </select>
         </div>
   
-        <!-- Product Details -->
         <h3>Order Details</h3>
         <table class="table table-bordered">
           <thead>
@@ -93,10 +92,19 @@
       };
 
       const removeProduct = (index) => {
+        if (order.value.products.length === 1) {
+          alert('You cannot remove the last product from the order.');
+          return;
+        }
         order.value.products.splice(index, 1);
       };
 
       const submitOrder = () => {
+        if (order.value.products.length === 0) {
+          alert('The order must contain at least one product.');
+          return;
+        }
+
         console.log('Order Submitted:', order.value);
         alert('Order has been successfully added!');
         router.push('/Orders');
