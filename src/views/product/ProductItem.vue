@@ -40,7 +40,7 @@ export default defineComponent({
     };
 
     const confirmDelete = () => {
-      if (confirm('Êtes-vous sûr de vouloir supprimer ce produit ?')) {
+      if (confirm('Are you sure you want to delete this order?')) {
         emit('delete-product');
       }
     };
